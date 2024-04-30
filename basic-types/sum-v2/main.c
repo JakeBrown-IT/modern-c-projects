@@ -7,7 +7,7 @@ int main(void) {
   printf("Enter integers (0 to terminate): ");
   scanf("%ld", &n);
 
-  while (n != 0) {
+  while (n != 0.0f) {
     sum += n;
     scanf("%ld", &n);
   }
