@@ -1,3 +1,8 @@
+/*
+ * Program for converting an alphabetical phone number to a numerical one,
+ * whilst preserving any punctuation.
+ */
+
 #include <stdio.h>
 
 int main(void) {
