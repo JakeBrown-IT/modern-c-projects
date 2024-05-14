@@ -30,14 +30,17 @@ int main(void) {
     char period;
 
     printf("Enter a 12-hour time: ");
-    scanf("d:%d", &hours, &minutes);
+    scanf("%d:%d", &hours, &minutes);
 
-    while ((period = getchar() != '\n')) {
+    while ((period = getchar()) != '\n') {
+        // if period == 'A' then check if hours == 12
+        // if true, then set hours to 0
         if (toupper(period) == 'A') {
             if (hours == 12) {
                 hours = 0;
             }
             break;
+        // if period == 'P' then check if hours != 12
         } else if (toupper(period) == 'P') {
             if (hours != 12) {
                 hours += 12;
