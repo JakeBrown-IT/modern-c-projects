@@ -16,7 +16,7 @@
  * 3 | 2       | 1.5     | 1.75
  * 3 | 1.75    | 1.71429 | 1.73214
  * 3 | 1.73214 | 1.73196 | 1.73205
- * 3 | 1.73205 | 1/73205 | 1.73205
+ * 3 | 1.73205 | 1.73205 | 1.73205
  * 
  * Note that the values of y get progressively closer to the true
  * square root of x. For greater accuracy, your program should
@@ -33,14 +33,16 @@
 
 int main(void) {
 
-    double x, y = 1, x_div_y, average, sqrt;
+    double x, y = 1, tmp, sqrt;
 
     printf("Enter a positive number: ");
     scanf("%lf", &x);
 
-    // while abs(old_y - new_y) > (0.00001  * y)
-    // x | y | x/y | Avr y x/y
-    printf("%lf | %lf | %lf | %lf\n", x, y, (x/y), (y + (x/y))/2);
+    do {
+        tmp = y;
+        y = (y + (x / y)) / 2;
+        sqrt = y;
+    } while (fabs(tmp - y) > (0.00001 * y));
 
     printf("Square root: %lf\n", sqrt);
 
