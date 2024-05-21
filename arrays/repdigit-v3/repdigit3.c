@@ -1,18 +1,11 @@
 /* Programming Project 2
  * 
- * Modify the repdigit.c program of Section 8.1 so that it shows which
- * digits (if any) were repeated:
+ * Modify the repdigit.c program of Section 8.1 so that it prints a table showing
+ * how many times each digit appears in the number:
  * 
- * Enter a number: 939577
- * Repeated digit(s): 7 9
- * 
- * -- Thinking --
- * 
- * User only enters numbers 0-9 so 10 slots in the array, all set to 0.
- * Array is the counter for each digit.
- * Every time each digit it encountered, increment the corresponding
- * counter in the array.
- * Print any array slots respective digit if greater than one.
+ * Enter a number: 41271092
+ * Digit:       0  1  2  3  4  5  6  7  8  9
+ * Occurances:  1  2  2  0  1  0  0  1  0  1
  */
 
 #include <stdio.h>
