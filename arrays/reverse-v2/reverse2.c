@@ -1,25 +1,30 @@
-/* Reverses a series of numbers using a variable-length array - C99 only. */
+/* Section 8 - Arrays
+ * Programming Project 4 
+ * 
+ * Modify the reverse.c program of Section 8.1 to use the expression 
+ * (int) (sizeof(a) / sizeof(a[0])) (or a macro with this value) for
+ * the array length.
+ */
 
 #include <stdio.h>
 
+#define N ((int) (sizeof(a) / sizeof(a[0])))
+
 int main(void) {
-    int i, n;
+    int a[10], i;
 
-    printf("How many numbers do you want to reverse? ");
-    scanf("%d", &n);
-
-    int a[n];
-
-    printf("Enter %d numbers: ", n);
-
-    for (i = 0; i < n; i++) {
+    printf("Enter %d numbers: ", N);
+    
+    for (i = 0; i < N; i++) {
         scanf("%d", &a[i]);
     }
 
     printf("In reverse order: ");
-    for (i = n - 1; i >= 0; i--) {
-        printf("%d ", a[i]);
+
+    for (i = N - 1; i >= 0; i--) {
+        printf(" %d", a[i]);
     }
+
     printf("\n");
 
     return 0;
