@@ -2,6 +2,13 @@
  *
  * Randomly walk across a 10x10 array from A-Z
  * If no available spaces to travel, we terminate early.
+ * 
+ * Characters can be incremented, so there is no need
+ * for a character array of the alphabet.
+ * 
+ * Original approach was using a coordinates approach, which proved too slow
+ * and complicated, so instead I have used the code from  William G Herman's GitHub
+ * repository and commented to explain some areas.
  */
 
 
@@ -10,108 +17,80 @@
 #include <stdbool.h>
 #include <stdlib.h>
 
-#define XDIM 10
-#define YDIM 10
-
 int main(void) {
-    char board[YDIM][XDIM] = {{'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'},
-                              {'.', '.', '.', '.', '.', '.', '.', '.', '.', '.'}};
-    
-    char letters[26] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
-                        'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P',
-                        'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X',
-                        'Y', 'Z'};
 
-    // arrays are [y, x]
-    int position[2] = {0, 0};
-    int target[2] = {0, 0};
+    char letter = 'A'; 
+    char grid[10][10] = {0};  // 10x10 grid -> (y, x) 
 
-    int direction;
-    bool valid_move;
-    
+    int i = 0,
+        j = 0,
+        up = 0,
+        down = 0,
+        left = 0,
+        right = 0,
+        move = 0;
+
     srand((unsigned) time(NULL));
 
-    board[0][0] = letters[0];
+    grid[i][j] = letter++;  // increment letter to get next one
 
-    printf("Current Position -> (0, 0) : %c\n", board[0][0]);
+    while (letter <= 'Z') {
+        up = down = left = right = move = 0;
 
-    // loop iterates over letters array
-    for (int i = 1; i < 26; i++) {
-        direction = rand() % 4;
+        // this checks what direction the next letter can be placed in
+        if (j + 1 < 10 && grid[i][j + 1] == 0)
+            up = 1;
+        if (j - 1 >= 0 && grid[i][j - 1] == 0)
+            down = 1;
+        if (i + 1 < 10 && grid[i + 1][j] == 0)
+            right = 1;
+        if (i - 1 >= 0 && grid[i - 1][j] == 0)
+            left = 1;
+
+        if (up + down + left + right == 0)
+            break;
+
+        move = rand() % 4;
         
-        switch (direction) {
+
+        /* Intentional fallthrough if direction fails */
+        switch(move) {
             case 0:
-            // up -> POSITION + (0, -1)
-                target[0] = position[0] - 1;
-                printf("New Direction -> Up // Target -> (%d, %d)\n", target[0], target[1]);
-                break;
+                if (up) {
+                    grid[i][++j] = letter++;
+                    break;
+                }
             case 1:
-            // down -> POSITION + (0, 1)
-                target[0] = position[0] + 1;
-                printf("New Direction -> Down // Target -> (%d, %d)\n", target[0], target[1]);
-                break;
+                if (down) {
+                    grid[i][--j] = letter++;
+                    break;
+                }
             case 2:
-            // left -> POSITION + (-1, 0)
-                target[1] = position[1] - 1;
-                printf("New Direction -> Left // Target -> (%d, %d)\n", target[0], target[1]);
-                break;
+                if (right) {
+                    grid[++i][j] = letter++;
+                    break;
+                }
             case 3:
-            // right -> POSITION + (1, 0)
-                target[1] = position[1] + 1;
-                printf("New Direction -> Right // Target -> (%d, %d)\n", target[0], target[1]);
+                if (left) {
+                    grid[--i][j] = letter++;
+                    break;
+                }
+            default:
                 break;
         }
-        // if the target position is outside of the array then print debug message and continue
-        if (target[0] < 0 || target[0] > 10 || target[1] < 0 || target[1] > 10) {
-            printf("Target Position (%d, %d) is out of array range.\n", position[0] + target[0], position[1] + target[1]);
-            continue;
-        } 
-        // if the target position is already occupied then print debug message and continue
-        else if (sizeof(board[target[0]][target[1]] != sizeof('.'))) {
-            printf("Target Position (%d, %d) already occupied.\n", position[0] + target[0], position[1] + target[1]);
-            continue;
-        } 
-        // otherwise, assign the current letter to the target position
-        else {
-            board[target[0]][target[1]] = letters[i];
-            
-            printf("Board (%d, %d) -> %c\n", target[0], target[1], letters[i]);
-            
-            position[0] = target[0];
-            position[1] = target[1];
-
-            printf("Current Position -> (%d, %d) : %c\n", position[0], position[1], letters[i]);
-        }
-
-        // reset target position
-        target[0] = position[0];
-        target[1] = position[1];
-
-        // print the board
-        for (int i = 0; i < YDIM; i++) {
-            for (int j = 0; j < XDIM; j++) {
-                printf("%c ", board[i][j]);
-            }
-            printf("\n");
-        }
-    
     }
 
-    // print the board
-    for (int i = 0; i < YDIM; i++) {
-        for (int j = 0; j < XDIM; j++) {
-            printf("%c ", board[i][j]);
+    for (i = 0; i < 10; i++) {
+        for (j = 0; j < 10; j++) {
+            if (grid[i][j] == 0) 
+                grid[i][j] = '.';
+            printf("%c ", grid[i][j]);
         }
         printf("\n");
     }
-
+    
     return 0;
 }
+
+    
+    
