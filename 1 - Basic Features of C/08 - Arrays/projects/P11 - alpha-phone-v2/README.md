@@ -1,5 +1,4 @@
-Section 08 - Arrays
-Project 11
+Section 08 - Arrays // Project 11
 
 Modify Programming Project 4 from Chapter 7 so that the program labels its output:
 ```

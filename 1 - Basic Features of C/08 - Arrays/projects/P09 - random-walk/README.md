@@ -1,5 +1,4 @@
-Section 08 - Arrays
-Project 9
+Section 08 - Arrays // Project 9
 
 Write a program that generates a "random walk" across a 10x10 array. The array will contain characters (all '.' initially). The program must randomly "walk" from element to element, always going up, down, left, or right by one element. The elements visited by the program will be labeled with the letters A through Z, in the order visited. Here's an example of the desired output:
 ```
