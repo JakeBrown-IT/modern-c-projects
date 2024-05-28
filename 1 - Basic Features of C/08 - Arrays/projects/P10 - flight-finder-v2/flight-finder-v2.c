@@ -1,4 +1,4 @@
-/* Arrays Project 10 - flight-vinder-v2 */
+/* Arrays Project 10 - flight-finder-v2 */
 
 #include <stdio.h>
 
