@@ -10,5 +10,5 @@ int main(void) {
 	printf("Enter a two positive integers: ");
 	scanf("%d %d", &n, &k);
 
-
+	return 0;
 }
