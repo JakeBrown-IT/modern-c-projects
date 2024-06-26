@@ -1,0 +1,1 @@
+/* Arrays Project 02 - income-tax.c */
