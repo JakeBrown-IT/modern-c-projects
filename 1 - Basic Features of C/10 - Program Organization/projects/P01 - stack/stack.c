@@ -64,7 +64,10 @@ int main(void)
         }
     }
 
-    printf("Parentheses/braces are nested properly\n");
+    if (top > 0)
+        printf("Parentheses/braces aren't nested properly\n");
+    else
+        printf("Parentheses/braces are nested properly\n");
 
     return 0;
 }
@@ -104,9 +107,11 @@ void push(char ch)
 
 int pop(void)
 {
-    if (is_empty()) {
+    if (is_empty())
+    {
         stack_underflow();
         exit(0);
     }
-    else return stack[--top];
+    else
+        return stack[--top];
 }
