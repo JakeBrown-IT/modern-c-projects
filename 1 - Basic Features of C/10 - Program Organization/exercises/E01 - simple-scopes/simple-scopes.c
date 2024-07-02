@@ -22,7 +22,7 @@ int main(void)
 
 /**
  * (a) a, b, c
- * (b) a, d, e
- * (c) a, e
+ * (b) a, d, e (only within block)
+ * (c) a, d, e
  * (d) a, f
  */

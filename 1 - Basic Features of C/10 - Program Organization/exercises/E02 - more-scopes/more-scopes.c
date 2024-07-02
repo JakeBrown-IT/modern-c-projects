@@ -21,21 +21,19 @@ int main(void)
 }
 
 /**
- * (a) b (external),
- *     c (external),
- *     b (internal),
- *     d (internal)
+ * (a) b (local)
+ *     d (local)
+ *     c (external)
  *
- * (b) b (external),
- *     c (external),
- *     c (internal),
- *     a (parameter),
+ * (b) c (local)
+ *     a (parameter)
+ *     b (external)
  *
- * (c) a (internal block),
- *     d (internal block)
+ * (c) a (block)
+ *     d (block)
+ *     c (local)
  *
- * (d) b (external),
- *     c (external),
- *     c (internal),
- *     d (internal)
+ * (d) c (local)
+ *     d (local)
+ *     b (external)
  */
