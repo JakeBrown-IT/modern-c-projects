@@ -10,7 +10,7 @@
 
 /* External variables */
 int hand[NUM_CARDS][2];
-bool straight, flush, four, three;
+bool royal, straight, flush, four, three;
 int pairs; /* Can be 0, 1, or 2 */
 
 /* Prototypes */
@@ -154,6 +154,7 @@ void analyze_hand(void)
 {
     int card, matches;
 
+    royal = false;
     straight = false;
     flush = false;
     four = false;
@@ -188,11 +189,16 @@ void analyze_hand(void)
 
     /* Check for straight */
     for (card = 1; card < NUM_CARDS; card++) {
-        if (hand[card][0] - hand[card][1] != 1)
+        if (hand[card][0] - hand[card - 1][0] != 1)
             break;
         if (card == NUM_CARDS - 1)
             straight = true;
     }
+
+    /* Check for royal flush */    
+    if (straight && flush)
+        if (hand[4][0] == 12 && hand[0][0] == 8)
+            royal = true;
 
     /* Check for 4-of-a-kind, 3-of-a-kind, and pairs */
     for (i = 0; i < NUM_CARDS; i++) {
@@ -210,7 +216,9 @@ void analyze_hand(void)
 
 void print_result(void)
 {
-    if (straight && flush)
+    if (royal)
+        printf("Royal flush");
+    else if (straight && flush)
         printf("Straight flush");
     else if (four)
         printf("Four of a Kind");
