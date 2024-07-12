@@ -1,6 +1,12 @@
+/** Section 04 Project 03
+ * Author -- Jake Brown
+ * Title  -- non-arith-reversal.c
+ */
+
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     int dig1, dig2, dig3;
 
     printf("Enter a three digit number: ");

@@ -1,6 +1,12 @@
+/** Section 03 Project 06
+ * Author -- Jake Brown
+ * Title  -- addfrac.c
+ */
+
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     int num1, denom1, num2, denom2, res_num, res_denom;
 
     printf("Enter two fractions separated by a plus sign: ");

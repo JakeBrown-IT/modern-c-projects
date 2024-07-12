@@ -1,9 +1,11 @@
-/* Section 03 Project 01 -- date-echo.c */
-
+/** Section 03 Project 01
+ * Author -- Jake Brown
+ * Title  -- date-echo.c
+ */
 #include <stdio.h>
 
-int main(void) {
-
+int main(void)
+{
     int day, month, year;
 
     printf("Enter a date (mm/dd/yyyy): ");

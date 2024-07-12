@@ -1,9 +1,12 @@
-/* Section 03 Project 04 -- phone-format.c */
+/** Section 03 Project 04
+ * Author -- Jake Brown
+ * Title  -- phone-format.c
+ */
 
 #include <stdio.h>
 
-int main(void) {
-
+int main(void)
+{
     int first, second, third;
 
     printf("Enter phone number [(xxx) xxx-xxxx]: ");

@@ -1,10 +1,14 @@
-/* Section 03 Project 03 -- book-format.c */
+/** Section 03 Project 03
+ * Author -- Jake Brown
+ * Title  -- book-format.c
+ */
 
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     int gsi, group, publisher, item, check;
-    
+
     printf("Enter ISBN: ");
     scanf("%d-%d-%d-%d-%d", &gsi, &group, &publisher, &item, &check);
 

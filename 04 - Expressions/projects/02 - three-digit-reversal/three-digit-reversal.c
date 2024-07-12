@@ -1,6 +1,12 @@
+/** Section 04 Project 02
+ * Author -- Jake Brown
+ * Title  -- three-digit-reversal.c
+ */
+
 #include <stdio.h>
 
-int main(void) {
+int main(void)
+{
     int num;
 
     printf("Enter a three digit number: ");
@@ -12,7 +18,7 @@ int main(void) {
     second = (num / 10) % 10;
     third = num % 10;
 
-    printf("The reversal is: %d%d%d\n", third, second, first); 
+    printf("The reversal is: %d%d%d\n", third, second, first);
 
     return 0;
-} 
+}
