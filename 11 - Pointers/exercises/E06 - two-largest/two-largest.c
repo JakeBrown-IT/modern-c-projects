@@ -1,1 +1,0 @@
-/** Pointers Exercise 06 - two-largest.c */

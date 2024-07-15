@@ -1,10 +1,14 @@
-/** Pointers Exercise 05 - split-time.c */
+/** Section 11 Exercise 05
+ * Author -- Jake Brown
+ * Title  -- split-time.c
+ */
 
 #include <stdio.h>
 
 void split_time(long total_sec, int *hr, int *min, int *sec);
 
-int main(void) {
+int main(void)
+{
     long total_sec;
     int hr = 0, min = 0, sec = 0;
     int *pHr = &hr, *pMin = &min, *pSec = &sec;
@@ -19,8 +23,9 @@ int main(void) {
     return 0;
 }
 
-void split_time(long total_sec, int *hr, int *min, int *sec) {
+void split_time(long total_sec, int *hr, int *min, int *sec)
+{
     *hr = total_sec / 3600;
-    *min = (total_sec - *hr * 3600) / 60 ;
+    *min = (total_sec - *hr * 3600) / 60;
     *sec = (total_sec - *hr * 3600) - *min * 60;
 }
