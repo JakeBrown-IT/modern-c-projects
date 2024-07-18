@@ -7,7 +7,8 @@
 
 #define N 10
 
-int main(void) {
+int main(void)
+{
     /* declare array of length N */
     int a[N] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
@@ -25,7 +26,8 @@ int main(void) {
      * the program reverses the array of N integers
      */
 
-    while (p < q) {
+    while (p < q)
+    {
         temp = *p;
         *p++ = *q;
         *q-- = temp;
@@ -34,6 +36,6 @@ int main(void) {
     for (i = 0; i < N; i++)
         printf("%d ", a[i]);
     printf("\n");
-    
+
     return 0;
 }
