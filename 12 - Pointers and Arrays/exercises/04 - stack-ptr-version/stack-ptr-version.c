@@ -43,7 +43,7 @@ int main(void)
                 continue;
             }
             else
-            {
+            {    
                 printf("Parentheses/braces aren't nested properly\n");
                 return 0;
             }
@@ -53,9 +53,8 @@ int main(void)
             check = pop();
 
             if (check == '{')
-            {
                 continue;
-            }
+
             else
             {
                 printf("Parentheses/braces aren't nested properly\n");
@@ -63,9 +62,7 @@ int main(void)
             }
         }
         else
-        {
             continue;
-        }
     }
 
     if (top_ptr > &stack[0])
