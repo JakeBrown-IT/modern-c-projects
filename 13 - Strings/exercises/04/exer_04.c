@@ -33,9 +33,11 @@ int read_line(char str[], int n) {
     while (i < n && (ch = getchar()) != '\n' && !isspace(ch))
         str[i++] = ch;
     
+    /* stop reading at first newline char then store it in string */
     if (ch == '\n' && i < n - 1)
         str[i++] = '\n';
 
+    /* store null character at end of string */
     str[i] = '\0';
 
     return i;
