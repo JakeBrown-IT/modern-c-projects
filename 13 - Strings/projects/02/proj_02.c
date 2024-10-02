@@ -13,8 +13,6 @@
 
 int read_line(char str[], int n);
 
-/* "mm/dd hh:mm <reminder>" */
-
 int main(void) {
     char datetime_str[DATETIME_LEN], msg_str[MSG_LEN];
     char reminders[MAX_REMIND][DATETIME_LEN + MSG_LEN + 1];
