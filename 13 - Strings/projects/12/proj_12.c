@@ -6,7 +6,6 @@
 
 #include <stdio.h>
 
-#define MAX_SIZE 100
 #define WORDLEN 20
 #define SENTLEN 30
 
