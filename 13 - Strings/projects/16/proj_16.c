@@ -35,7 +35,7 @@ int main(void) {
 }
 
 void reverse(char *message) {
-    char ch, *p = message, *q;
+    char ch, *p = message, *q = message;
 
     while (*q++)
         ;
@@ -43,7 +43,7 @@ void reverse(char *message) {
     while (p != q) {
         ch = *p;
         *p++ = *q;
-        *q++ = ch;
+        *q-- = ch;
     }
 }
 
