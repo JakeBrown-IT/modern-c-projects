@@ -12,6 +12,7 @@ int main(void)
     int word_len;
 
     clear_line();
+    
     for (;;) {
         read_word(word, MAX_WORD_LEN+1);
         word_len = strlen(word);
