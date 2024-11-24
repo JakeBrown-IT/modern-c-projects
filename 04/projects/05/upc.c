@@ -1,8 +1,3 @@
-/** Section 04 Project 05
- * Author -- Jake Brown
- * Title  -- upc.c
- */
-
 #include <stdio.h>
 
 int main(void)

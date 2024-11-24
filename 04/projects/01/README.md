@@ -1,4 +1,4 @@
-# Section 04 Project 01 -- two-digit-reversal
+# Section 04 Project 01
 
 Write a program that asks the user to enter a two-digit-number, then print the number with its digits reversed. A session with the program should have the following appearance:
 

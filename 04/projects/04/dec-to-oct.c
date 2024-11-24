@@ -1,8 +1,3 @@
-/** Section 04 Project 04
- * Author -- Jake Brown
- * Title  -- dec-to-oct.c
- */
-
 #include <stdio.h>
 
 int main(void)

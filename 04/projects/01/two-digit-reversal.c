@@ -1,8 +1,3 @@
-/** Section 04 Project 01
- * Author -- Jake Brown
- * Title  -- two-digit-reversal.c
- */
-
 #include <stdio.h>
 
 int main(void)

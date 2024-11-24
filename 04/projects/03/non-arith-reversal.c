@@ -1,8 +1,3 @@
-/** Section 04 Project 03
- * Author -- Jake Brown
- * Title  -- non-arith-reversal.c
- */
-
 #include <stdio.h>
 
 int main(void)

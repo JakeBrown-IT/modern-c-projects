@@ -1,4 +1,4 @@
-# Section 04 Project 04 -- dec-to-oct
+# Section 04 Project 04
 
 Write a program that reads an integer entered by the user and displays it in octal (base 8):
 

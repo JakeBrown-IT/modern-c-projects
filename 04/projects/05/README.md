@@ -1,4 +1,4 @@
-# Section 04 Project 05 -- upc
+# Section 04 Project 05
 
 Rewrite the `upc.c` program of Section 4.1 so that the user enters 11 digits at one time, instead of entering one digit, then five digits, and then another five digits.
 

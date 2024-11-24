@@ -1,8 +1,3 @@
-/** Section 04 Project 06
- * Author -- Jake Brown
- * Title  -- ean.c
- */
-
 #include <stdio.h>
 
 int main(void)
