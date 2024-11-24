@@ -1,4 +1,4 @@
-# Section 03 Project 02 -- product-format
+# Section 03 Project 02
 
 Write a program that formats product information entered by the user. A session with the program should look like this:
 

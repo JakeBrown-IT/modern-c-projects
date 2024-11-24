@@ -1,8 +1,3 @@
-/** Section 03 Project 06
- * Author -- Jake Brown
- * Title  -- addfrac.c
- */
-
 #include <stdio.h>
 
 int main(void)

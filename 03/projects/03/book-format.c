@@ -1,8 +1,3 @@
-/** Section 03 Project 03
- * Author -- Jake Brown
- * Title  -- book-format.c
- */
-
 #include <stdio.h>
 
 int main(void)

@@ -1,8 +1,3 @@
-/** Section 03 Project 02
- * Author -- Jake Brown
- * Title  -- product-format.c
- */
-
 #include <stdio.h>
 
 int main(void)

@@ -1,8 +1,3 @@
-/** Section 03 Project 05
- * Author -- Jake Brown
- * Title  -- magic-box.c
- */
-
 #include <stdio.h>
 
 int main(void)

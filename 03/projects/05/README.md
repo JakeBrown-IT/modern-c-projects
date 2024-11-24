@@ -1,4 +1,4 @@
-# Section 03 Project 05 -- magic-box
+# Section 03 Project 05
 
 Write a program that asks the user to enter the numbers from 1 to 16 (in any order) and then displays the numbers in a 4 by 4 arrangement, followed by the sums of the rows, columns, and diagonals:
 

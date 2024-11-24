@@ -1,7 +1,3 @@
-/** Section 03 Project 01
- * Author -- Jake Brown
- * Title  -- date-echo.c
- */
 #include <stdio.h>
 
 int main(void)
