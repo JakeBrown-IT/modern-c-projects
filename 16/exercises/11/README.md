@@ -19,4 +19,5 @@ If `char` values occupy one byte, `int` values occupy four bytes, and `double` v
 
 # Solution
 
+A C compiler will allocate 20 bytes in total for the `s` structure, `union`'s require the memory space of the largest member, which is `c`, therefore being allocated 8 bytes.
 
