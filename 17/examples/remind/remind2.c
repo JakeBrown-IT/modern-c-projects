@@ -4,13 +4,12 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_REMIND 50   /* maximum number of reminders */
-#define MSG_LEN 60      /* max length of reminder message */
+#define MAX_REMIND 50 /* maximum number of reminders */
+#define MSG_LEN 60    /* max length of reminder message */
 
 int read_line(char str[], int n);
 
-int main(void)
-{
+int main(void) {
     char *reminders[MAX_REMIND];
     char day_str[3], msg_str[MSG_LEN + 1];
     int day, i, j, num_remind = 0;
@@ -58,8 +57,7 @@ int main(void)
     return 0;
 }
 
-int read_line(char str[], int n)
-{
+int read_line(char str[], int n) {
     int ch, i = 0;
 
     while ((ch = getchar()) != '\n')

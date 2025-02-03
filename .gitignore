@@ -6,6 +6,7 @@
 !*.h
 !*.md
 !Makefile
+!.clang-format
 
 # track directories
 !*/
